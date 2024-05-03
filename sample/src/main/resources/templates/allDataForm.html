@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Form Data</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<h1>All Form Data</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Count</th>
+        <th>Cost</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="formData : ${formDataList}">
+        <td th:text="${formData.id}">ID</td>
+        <td th:text="${formData.bookName}">Name</td>
+        <td th:text="${formData.authorName}">Author</td>
+        <td th:text="${formData.countOfPages}">Count</td>
+        <td th:text="${formData.cost}">Cost</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
